@@ -16,9 +16,23 @@ const equals = (obj1, obj2) => {
   if (keys1.length !== keys2.length) return false;
   //if any of the keys are not equal, return false
   if (sync(keys1, keys2).length) return false;
+  //loop over keys and compare in both maps
+  for (let i = 0; i < keys1.length; i++) {
+    const current = keys1[i];
+    //if types are different return false;
+    if (typeof obj1[current] !== typeof obj2[current]) return false;
+    //if the type of current value is object we want to recurse;
+    if (typeof obj1[current] === 'object') {
+      if (equals(obj1[current], obj2[current]) === false) return false;
+    } else {
+      //if value is different return false
+      if (obj1[current] !== obj2[current]) return false;
+    }
+  }
+  return true;
 };
 
-const testEquals = (obj1, obj2) => {
+const testEquals = () => {
   console.log(
     equals(
       { key1: 'value', key2: { key3: 1 } },
