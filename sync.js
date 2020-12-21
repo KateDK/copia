@@ -44,3 +44,5 @@ const testSync = () => {
 };
 
 testSync();
+
+module.exports = sync;
