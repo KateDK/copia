@@ -4,6 +4,8 @@
  For this question we want to show the deep equality of two hashmaps. To simpify the problem, you can assume that each hash map always uses a string as a key and a map, number, or string as a value. For the purpose of this problem, you can assume that any equals operator for two hash maps is not enabled.
  *
  *
+ * Time complexity O(n)
+ * Space complexity: O(n)
  */
 
 let sync = require('./sync');
@@ -33,6 +35,7 @@ const equals = (obj1, obj2) => {
 };
 
 const testEquals = () => {
+  console.log('Equals Tests:');
   console.log(
     equals(
       { key1: 'value', key2: { key3: 1 } },
