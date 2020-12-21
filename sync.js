@@ -6,6 +6,18 @@
  */
 
 const sync = (arr1, arr2) => {
+  //create maps of arrays and res array
+  const map1 = {};
+  const map2 = {};
+  const res = [];
+  for (let i = 0; i < arr1.length; i++) {
+    const current = arr1[i];
+    map1[current] = true;
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    const current = arr2[i];
+    map2[current] = true;
+  }
 };
 
 const testSync = () => {
