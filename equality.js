@@ -73,6 +73,22 @@ const testEquals = () => {
     ),
     ' ==> false'
   );
+
+  console.log(
+    equals(
+      {
+        key1: [{ key2: { key3: 1 }, key3: 1 }, 3],
+        key2: { key3: 1 },
+        key4: 'value2',
+      },
+      {
+        key1: [{ key2: { key3: 1 }, key3: 1 }, 3],
+        key2: { key3: 1 },
+        key4: 'value2',
+      }
+    ),
+    ' ==> true'
+  );
 };
 
 testEquals();
