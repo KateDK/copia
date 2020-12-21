@@ -18,6 +18,22 @@ const sync = (arr1, arr2) => {
     const current = arr2[i];
     map2[current] = true;
   }
+  //for each element that is not found in the other map, push to res array
+  for (let i = 0; i < arr1.length; i++) {
+    const current = arr1[i];
+    if (!map2[current]) {
+      res.push(current);
+    }
+  }
+
+  for (let i = 0; i < arr2.length; i++) {
+    const current = arr2[i];
+    if (!map1[current]) {
+      res.push(current);
+    }
+  }
+
+  return res;
 };
 
 const testSync = () => {
