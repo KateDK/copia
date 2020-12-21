@@ -40,6 +40,7 @@ const testSync = () => {
   console.log(sync([1, 2, 3], [1, 3, 4]), ' ==> [2, 4]');
   console.log(sync([1, 9], [1]), ' ==> [9]');
   console.log(sync([1, 2, 3], [1, 2, 3]), ' ==> []');
+  console.log(sync([1, 9], []), ' ==> [1,9]');
 };
 
 testSync();
